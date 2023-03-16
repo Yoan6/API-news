@@ -4,7 +4,7 @@
 /* Définition des principales couleurs */
 :root {
   --text-color: #fafafa; /* (Texte presque blanc) */
-  --background: #34495e; /* (Fond bleu foncé) */
+  --background: #202020; /* (Fond gris foncé) */
   --background-button: #bebebe;
   --main-green: rgb(26, 188, 156);
   --active-green: rgb(20, 156, 128);
@@ -106,12 +106,12 @@ h1 {
 
 /* GIF de chargement (caché par défaut) */
 #bloc-gif-attente {
-  display: none;
+  visibility : collapse;
   margin: 40px;
   text-align: center;
 }
 
-#bloc-resultats p.res::before {
+#bloc-resultats ul.res::before {
   /* Affichage d'une flèche devant chaque résultat
 		(Cf. https://unicode-table.com/fr/21E8/ ) */
   content: "\21E8\00A0";

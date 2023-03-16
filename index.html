@@ -12,19 +12,44 @@
       <h1>Recherche d'articles de news</h1>
 
       <p id="explication">
-        Cette page permet de rechercher des articles de news via l'API publique
-        de <a href="https://newsdata.io/" target="_blank">newsdata.io</a>.<br />
-
+        Cette page permet de rechercher des articles via l'API publique
+        de <a href="https://newsdata.io/" target="_blank">NewsData.io</a>.<br/></br>
+        Saisir un sujet qui vous intéresse, une phrase, une passion ou alors simplement des mots-clés.
       </p>
     </header>
     <hr />
+
+    <section id="filter">
+      <div>
+        <p>Les mots que vous ne voulez pas dans votre recherche : </p>
+        <input type="text" placeholder="Mots à exclure espacés (ex: eau arbre politique)" id="motsaenlever"/>
+      </div>
+      <div>
+        <p>Choisir la langue de l'article</p>
+        <select id="langue">
+          <option>fr</option>
+          <option>en</option>
+          <option>it</option>
+          <option>be</option>
+          <option>at</option>
+          <option>dk</option>
+          <option>gr</option>
+          <option>nl</option>
+          <option>ro</option>
+          <option>gb</option>
+          <option>fi</option>
+        </select>
+      </div>
+    </section>
+
+    <hr>
 
     <main id="conteneur">
       <!-- Section de recherche (avec résultats) -->
       <section id="section-recherche">
         <div id="bloc-recherche">
           <!-- Champ de recherche -->
-          <input type="text" placeholder="Que cherchez-vous ?" />
+          <input type="text" placeholder="Que cherchez-vous ?" id="recherche"/>
 
           <!-- Boutons -->
           <button
@@ -64,10 +89,8 @@
           />
         </div>
         <div id="bloc-resultats">
-          <p class="res">Résultat 1 ...</p>
-          <p class="res">Résultat 2 ...</p>
-          <p class="res">Résultat 3 ...</p>
-          <p class="info-vide">(Aucun résultat trouvé)</p>
+          <h4>Les résultats seront limités à 9.</h4>
+          <p class="info-vide" >(Aucun résultat trouvé)</p>
         </div>
       </section>
 
@@ -112,5 +135,10 @@
         <p class="info-vide">(Aucune recherche favorite)</p>
       </section>
     </main>
+    <!-- Inclusions des scripts JS -->
+    <script src="js/view.js"></script>
+    <script src="js/research.js"></script>
+    <script src="js/controller.js"></script>
+    <script src="js/News.js"></script>
   </body>
 </html>
