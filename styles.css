@@ -27,6 +27,7 @@ body {
 /* Paragraphes "Aucun résultat..." et "Aucune recherche..." */
 p.info-vide {
   font-style: italic;
+  display: none;
 }
 
 /* Partie En-tête */
@@ -41,6 +42,11 @@ h1 {
   font-size: 1.2em;
 }
 
+#langue {
+  color: black;
+  font-size: 1em;
+}
+
 /* Conteneur principal */
 #conteneur {
   display: flex;
@@ -52,6 +58,35 @@ h1 {
 #section-recherche {
   margin-top: 0;
   flex: 1 1 auto;
+}
+
+#filter {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+
+#filter div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#filter input {
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 1em;
+  color: var(--almost-black);
+  width: 600px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid #0082b0;
+}
+
+#filter p {
+  font-size: 22px;
 }
 
 #bloc-recherche {
@@ -72,6 +107,10 @@ h1 {
   flex: 1;
   padding: 0.7em;
   border: 0.3em solid var(--main-green);
+}
+
+#btn-favoris:hover {
+  cursor: pointer;
 }
 
 #bloc-recherche > button {
@@ -115,6 +154,10 @@ h1 {
   /* Affichage d'une flèche devant chaque résultat
 		(Cf. https://unicode-table.com/fr/21E8/ ) */
   content: "\21E8\00A0";
+}
+
+#bloc-resultats h4 {
+  margin-bottom: 40px;
 }
 
 /* Section de la barre de séparation */
