@@ -23,8 +23,7 @@ view.btnFavoris.addEventListener("click", function () {
             view.afficheArticle(data);
         }))
         view.imgCroix.forEach(img => img.addEventListener("click", function () {
-            console.log("L'évènement supprimerFavoris fonctionne");
-            view.removeFavorite();
+            view.removeFavorite(img.parentElement.firstElementChild.textContent);
         }))
     }
 })

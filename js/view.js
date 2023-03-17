@@ -43,11 +43,11 @@ const view = {
         view.imgCroix = document.querySelectorAll(".croix-favoris");
     },
 
-    removeFavorite() {
+    removeFavorite(value) {
         let confirmer = confirm("Souhaitez-vous supprimer ce favoris ?");
         if (confirmer) {
-            let spanFavori = this.favoris[this.favoris.length - 1];
-            localStorage.removeItem(spanFavori);
+
+            localStorage.removeItem(value);
         }
     },
 
