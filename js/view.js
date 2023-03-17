@@ -5,6 +5,7 @@ const view = {
     btnRecherche: document.getElementById("btn-lancer-recherche"),
     resultats: document.querySelectorAll(".res"),
     blocResultats: document.getElementById("bloc-resultats"),
+    imgEtoile: document.querySelector("#btn-favoris img"),
     infoVide: document.querySelectorAll(".info-vide"),
     conteneurFavorites: document.getElementById("liste-favoris"),
     rechercheFavorites: document.querySelectorAll("#liste-favoris li"),
@@ -90,5 +91,5 @@ const view = {
             this.blocResultats.appendChild(art);
         }
         view.gifAttente.style.visibility = "collapse";
-    }
+    },
 }

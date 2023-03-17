@@ -110,7 +110,7 @@ h1 {
 }
 
 #btn-favoris:hover {
-  cursor: pointer;
+  border-color: white;
 }
 
 #bloc-recherche > button {
@@ -126,6 +126,10 @@ h1 {
 /* Apparences des boutons clicables */
 #bloc-recherche > button.btn_clicable {
   background-color: var(--main-green);
+}
+
+.croix-favoris {
+  margin-left: 5px;
 }
 
 #bloc-recherche > button:focus {
