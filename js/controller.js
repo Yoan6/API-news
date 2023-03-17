@@ -23,7 +23,8 @@ view.btnFavoris.addEventListener("click", function () {
             view.afficheArticle(data);
         }))
         view.imgCroix.forEach(img => img.addEventListener("click", function () {
-            view.removeFavorite(img.parentElement.textContent);
+            img.parentElement.firstElementChild.id = "li-favoris";
+            view.removeFavorite(img.parentElement.firstElementChild.textContent);
         }))
     }
 })
