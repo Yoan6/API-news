@@ -33,7 +33,6 @@ view.stringInput.addEventListener("input", function () {
     view.modifierEtoileFavoris();
 });
 
-// Lorsqu'on clique sur l'image croix pour supprimer une recherche favorite :
 
 
 view.btnRecherche.addEventListener("click", async function () {
@@ -50,6 +49,15 @@ view.btnRecherche.addEventListener("click", async function () {
 
     view.afficheArticle(data);
 })
+view.favoris.forEach(fav => fav.addEventListener("click", async function () {
+    let data = await research.appelApiByUrl(localStorage.getItem(fav.textContent));
+    view.afficheArticle(data);
+}))
 
+view.imgCroix.forEach(img => img.addEventListener("click", function () {
+    img.parentElement.firstElementChild.id = "li-favoris";
+    view.removeFavorite(img.parentElement.firstElementChild.textContent);
+}))
 
+view.afficheFavoris();
 

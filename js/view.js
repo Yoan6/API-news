@@ -29,6 +29,7 @@ const view = {
         span.classList.add("favoris");
         const imgCroix = document.createElement("img");
         span.textContent = this.stringInput.value;
+        elementFavoris.id=this.stringInput.value;
         imgCroix.src = "images/croix.svg";
         imgCroix.alt = "Icone pour supprimer le favoris";
         imgCroix.title = "Cliquer pour supprimer le favori";
@@ -47,7 +48,7 @@ const view = {
         let confirmer = confirm("Souhaitez-vous supprimer ce favoris ?");
         if (confirmer) {
             console.log(value);
-            document.getElementById("li-favoris").remove();
+            document.getElementById(value).remove();
             localStorage.removeItem(value);
         }
     },
@@ -93,4 +94,29 @@ const view = {
         }
         view.gifAttente.style.visibility = "collapse";
     },
+
+    afficheFavoris(){
+        const items= Object.keys(localStorage);
+        for(let i=0;i<localStorage.length;i++){
+            const elementFavoris = document.createElement("li");
+            const span = document.createElement("span");
+            span.title = "Cliquer pour relancer la recherche";
+            span.classList.add("favoris");
+            const imgCroix = document.createElement("img");
+            span.textContent = items[i];
+            elementFavoris.id=items[i];
+            imgCroix.src = "images/croix.svg";
+            imgCroix.alt = "Icone pour supprimer le favoris";
+            imgCroix.title = "Cliquer pour supprimer le favori";
+            imgCroix.className = 'croix-favoris';
+            imgCroix.width = 15;
+            // On ajoute l'élément au conteneur
+            elementFavoris.appendChild(span);
+            elementFavoris.appendChild(imgCroix);
+            this.conteneurFavorites.appendChild(elementFavoris);
+            // On actualise les recherches favorites
+            view.favoris = document.querySelectorAll(".favoris");
+            view.imgCroix = document.querySelectorAll(".croix-favoris");
+        }
+    }
 }
