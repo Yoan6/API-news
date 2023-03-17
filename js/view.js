@@ -46,7 +46,12 @@ const view = {
     removeFavorite(value) {
         let confirmer = confirm("Souhaitez-vous supprimer ce favoris ?");
         if (confirmer) {
-
+            // Supprimer l'élément li de text-content = value
+            for (let i = 0; i < this.conteneurFavorites; i++) {
+                if (this.conteneurFavorites[i].textContent === value) {
+                    this.conteneurFavorites[i].remove();
+                }
+            }
             localStorage.removeItem(value);
         }
     },
